@@ -1,7 +1,7 @@
 html {
-    /* The nav header is 2rem + 22px high, plus 20px for the margin-top of the
+    /* The nav header is 3.40625rem high, plus 20px for the margin-top of the
        main container. */
-    scroll-padding-top: calc(2rem + 22px + 20px);
+    scroll-padding-top: calc(3.40625rem + 20px);
 }
 
 body > .container {
@@ -22,14 +22,13 @@ body > .container {
 }
 
 pre, code {
-    background: #f8f5f0;
-    color: #6e6b5e;
-    border: 1px solid rgba(223,215,202,0.75);
-    border-radius: 0.25rem;
+    background: #eee;
+    color: #000;
+    border: 1px solid rgba(0,0,0,0.125);
 }
 
 pre {
-    padding: 0.75em;
+    padding: 0.5em;
 }
 
 code {
@@ -44,11 +43,11 @@ pre code {
 }
 
 a code {
-    color: #93c54b;
+    color: #008cba;
 }
 
 a:hover code {
-    color: #6b9430;
+    color: #00526e;
 }
 
 kbd {
@@ -69,23 +68,21 @@ footer {
 }
 
 .modal-dialog {
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 /* Style the admonitions. */
 
 .admonition {
     margin-bottom: 1rem;
-    border: 1px solid rgba(223,215,202,0.75);
-    border-radius: 0.25rem;
+    border: 1px solid rgba(0,0,0,0.125);
 }
 
 .admonition > .admonition-title {
     margin: 0;
     padding: 0.75rem 1rem;
-    background: rgba(248,245,240,0.25);
-    border-bottom: 1px solid rgba(223,215,202,0.75);
-    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    background: rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.125);
     font-size: 1rem;
 }
 
@@ -105,18 +102,30 @@ footer {
 
 /* Style each kind of admonition. */
 
+.admonition.note, .admonition.note > .admonition-title {
+    border-color: #3db5d8;
+}
+
 .admonition.note > .admonition-title {
-    background: #5dbee4;
+    background: #5bc0de;
     color: #fff;
+}
+
+.admonition.warning, .admonition.warning > .admonition-title {
+    border-color: #d08002;
 }
 
 .admonition.warning > .admonition-title {
-    background: #f59b69;
+    background: #e99002;
     color: #fff;
 }
 
+.admonition.danger, .admonition.danger > .admonition-title {
+    border-color: #ea2f10;
+}
+
 .admonition.danger > .admonition-title {
-    background: #e17c77;
+    background: #f04124;
     color: #fff;
 }
 
@@ -130,17 +139,13 @@ footer {
 .bs-sidebar.affix {
     position: -webkit-sticky;
     position: sticky;
-    /* The nav header is 2rem + 22px high, plus 20px for the margin-top of the
+    /* The nav header is 3.40625rem high, plus 20px for the margin-top of the
        main container. */
-    top: calc(2rem + 22px + 20px);
+    top: calc(3.40625rem + 20px);
 }
 
 .bs-sidebar.card {
     padding: 0;
-}
-
-.bs-sidebar > .card {
-    background-color: #f8f5f0 !important;
 }
 
 /* Toggle (vertically flip) sidebar collapse icon */
@@ -211,13 +216,23 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 @media (max-width: 991.98px) {
     .navbar-collapse.show {
         overflow-y: auto;
-        max-height: calc(100vh - 2rem - 22px);
+        max-height: calc(100vh - 3.40625rem);
     }
 }
 
-.dropdown-item.open {
-    color: #8E8C84;
-    background-color: #F8F5F0;
+.bg-primary .dropdown-item.open {
+    color: #fff;
+    background-color: #0079a1;
+}
+
+.bg-light .dropdown-item.open {
+    color: rgba(0,0,0,0.7);
+    background-color: #fbfbfb;
+}
+
+.bg-dark .dropdown-item.open {
+    color: #fff;
+    background-color: #262626;
 }
 
 .dropdown-submenu > .dropdown-menu {
@@ -240,14 +255,18 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
     margin-right: -10px;
 }
 
-.dropdown-submenu:hover > a::after {
-    border-left-color: #404040;
+dropdown-submenu:hover > a::after {
+    border-left-color: #fff;
+}
+
+.bg-light dropdown-submenu:hover > a::after {
+    border-left-color: rgba(0,0,0,0.7);
 }
 
 @media (min-width: 992px) {
     .dropdown-menu {
         overflow-y: auto;
-        max-height: calc(100vh - 2rem - 22px);
+        max-height: calc(100vh - 3.40625rem);
     }
 
     .dropdown-submenu {
