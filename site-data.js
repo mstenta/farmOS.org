@@ -16,6 +16,14 @@ const BLOG_TEMPLATE = './src/templates/blog.js';
  * file at its `baseURI`.
  */
 
+/**
+ * PATTERNS
+ * A source may optionally supply `patterns`, which are passed through to
+ * gatsby-source-git to select the files cloned from the remote repository.
+ * A value may be a glob string or an array of glob strings. By default, all
+ * files under the source's `directory` are cloned.
+ */
+
 module.exports = {
   siteMetadata: {
     title: "farmOS",
