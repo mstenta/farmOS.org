@@ -21,12 +21,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === 'MarkdownRemark') {
     const { sourceInstanceName } = getNode(node.parent);
     const source = sources.find(s => s.name === sourceInstanceName);
-    const { basePath, baseURI, directory, template = defaultTemplate } = source;
+    const { basePath, baseURI, directory, index, template = defaultTemplate } = source;
     const relativeFilePath = createFilePath({
       node,
       getNode,
       basePath,
     }).replace(directory, '');
+    // Render a source's index file at the source's base URI.
+    if (index && relativeFilePath === index) relativeFilePath = '';
     const slug = node.frontmatter && node.frontmatter.slug;
     const pathname = `/${baseURI}/${slug || relativeFilePath}`.replace(multiSlashRE, '/');
 

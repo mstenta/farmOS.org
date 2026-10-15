@@ -8,6 +8,14 @@
 const DOCS_TEMPLATE = './src/templates/docs.js';
 const BLOG_TEMPLATE = './src/templates/blog.js';
 
+/**
+ * INDEX
+ * A source may optionally designate an `index` file which will be rendered
+ * at the source's `baseURI` instead of at a subpath of it. For example, a
+ * source with `index: 'README'` will render its repository's `README.md`
+ * file at its `baseURI`.
+ */
+
 module.exports = {
   siteMetadata: {
     title: "farmOS",
