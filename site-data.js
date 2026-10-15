@@ -87,5 +87,14 @@ module.exports = {
       directory: 'posts/',
       template: BLOG_TEMPLATE,
     },
+    {
+      name: 'delightful',
+      title: 'Delightful farmOS',
+      baseURI: '/community/delightful',
+      remote: process.env.DELIGHTFUL_REPO || 'https://github.com/farmOS/delightful-farmOS.git',
+      branch: process.env.DELIGHTFUL_REPO_BRANCH || 'main',
+      index: 'README',
+      template: DOCS_TEMPLATE,
+    },
   ],
 };
